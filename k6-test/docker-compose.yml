@@ -1,0 +1,21 @@
+services:
+  influxdb:
+    image: docker.arvancloud.ir/influxdb:1.8
+    ports:
+      - "8086:8086"
+    environment:
+      INFLUXDB_DB: k6
+    volumes:
+      - influxdb_data:/var/lib/influxdb
+
+  grafana:
+    image: docker.arvancloud.ir/grafana/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - influxdb
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: "admin"
+
+volumes:
+  influxdb_data:
