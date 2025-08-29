@@ -1,2 +1,2 @@
 # sample-test
-my tests for web services
+- [k6-test](k6-test)
