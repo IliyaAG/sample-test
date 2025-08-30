@@ -7,15 +7,30 @@ services:
       INFLUXDB_DB: k6
     volumes:
       - influxdb_data:/var/lib/influxdb
+    networks:
+      - mon_net
 
   grafana:
-    image: docker.arvancloud.ir/grafana/grafana
+    image: grafana/grafana:${GRAFANA_IMAGE_TAG}
+    restart: ${RESTART_POLICY}
+    container_name: grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/:/etc/grafana/provisioning/
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USERNAME}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFZANA_PASSWORD}
+      - GF_INSTALL_PLUGINS=${GRAFANA_INSTALL_PLUGINS}
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - GF_PATHS_DATA=/var/lib/grafana
+    networks:
+      - mon_net
     ports:
       - "3000:3000"
     depends_on:
       - influxdb
-    environment:
-      GF_SECURITY_ADMIN_PASSWORD: "admin"
 
 volumes:
   influxdb_data:
+
+  grafana_data:
