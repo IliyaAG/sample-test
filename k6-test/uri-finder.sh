@@ -22,7 +22,7 @@ URIS=$(
 
 JS_URIS=$(echo "$URIS" |awk '{print "  \"" $0 "\","}')
 
-cat > variables.js.test <<EOL
+cat > variables.js <<EOL
 export const BASE_URL = 'https://$DOMAIN';
 
 export const paths = [
