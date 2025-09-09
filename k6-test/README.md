@@ -7,5 +7,5 @@
   - [ ] Breake point test
   - [ ] Soak test
 
-![Types of tests](images/chart-load-test-types-overview.png)
+![Types of tests](../images/chart-load-test-types-overview.png)
 
