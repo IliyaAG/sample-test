@@ -2,10 +2,11 @@
 
 ## Non functional tests list:
   - [x] Avrage load test
-  - [ ] Stress test
-  - [ ] Spike test
-  - [ ] Breake point test
-  - [ ] Soak test
+  - [x] Stress test
+  - [x] Spike test
+  - [x] Breake point test
+  - [x] Soak test
 
 ![Types of tests](../images/chart-load-test-types-overview.png)
+
 
