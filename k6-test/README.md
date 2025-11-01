@@ -6,21 +6,10 @@
   - [x] Spike test
   - [x] Breake point test
   - [x] Soak test
-
-![Types of tests](../images/chart-load-test-types-overview.png)
-
-### Avrage load test
-
-### Stress test
-
-### Spike test
-
-### Breake point test
-
-### Soak test
+  - [] Smoke test
 
 # Quick start
-
+### instll k6:
 **Debian/Ubuntu:**
 ```bash
 sudo gpg -k
@@ -35,3 +24,31 @@ sudo apt-get install k6
 sudo dnf install https://dl.k6.io/rpm/repo.rpm
 sudo dnf install k6
 ```
+### run the compose file:
+```bash
+sudo docker compose up -d
+```
+### run test:
+```bash
+k6 run --out influxdb=http://localhost:8086/k6 <your_test>
+```
+replace **<your_test>** with one of the fallowing items:
+  - LoadTest.js
+  - SoakTest.js
+  - SpikeTest.js
+  - StressTest.js
+  - 
+
+
+![Types of tests](../images/chart-load-test-types-overview.png)
+
+### Avrage load test
+
+### Stress test
+
+### Spike test
+
+### Breake point test
+
+### Soak test
+
