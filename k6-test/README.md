@@ -6,7 +6,7 @@
   - [x] Spike test
   - [x] Breake point test
   - [x] Soak test
-  - [] Smoke test
+  - [x] Smoke test
 
 # Quick start
 ### instll k6:
@@ -37,18 +37,29 @@ replace **<your_test>** with one of the fallowing items:
   - SoakTest.js
   - SpikeTest.js
   - StressTest.js
-  - 
+  - SmokeTest.js
 
 
 ![Types of tests](../images/chart-load-test-types-overview.png)
 
+### Smoke Test
+Before running any other tests, we run a smoke test to make sure the service and all endpoints we wrote tests for are up.
+
 ### Avrage load test
+Now our goal is to measure performance and stability under typical and expected traffic conditions
+
+We gradually increase the load to normal, hold it steady, then reduce it.
 
 ### Stress test
+Now we want to see how much load our system or service can handle beyond its normal limits.
+
+So we gradually increase the load until the response time or errors reach the desired increase, then we reduce the load to also check the recovery behavior of the service.
 
 ### Spike test
-
-### Breake point test
+Now we want to examine the reaction and behavior of the system and service to sudden and severe load increases to become familiar with its behavior during times of urgent sales and campaigns.
 
 ### Soak test
+Now we want to examine the behavior of the system and service in the long term and investigate the problems that may occur in the long term such as memory leaks, connection resource exhaustion, etc.
 
+### Breake point test
+Now we want to find the exact breaking point and we increase the load to find the exact breaking point.
