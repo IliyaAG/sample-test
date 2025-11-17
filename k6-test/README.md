@@ -45,21 +45,27 @@ replace **<your_test>** with one of the fallowing items:
 ### Smoke Test
 Before running any other tests, we run a smoke test to make sure the service and all endpoints we wrote tests for are up.
 
+![Types of tests](../images/smoke.webp)
 ### Avrage load test
 Now our goal is to measure performance and stability under typical and expected traffic conditions
 
 We gradually increase the load to normal, hold it steady, then reduce it.
+![Types of tests](../images/avrage-load.webp)
 
 ### Stress test
 Now we want to see how much load our system or service can handle beyond its normal limits.
 
 So we gradually increase the load until the response time or errors reach the desired increase, then we reduce the load to also check the recovery behavior of the service.
+![Types of tests](../images/stress.webp)
 
 ### Spike test
 Now we want to examine the reaction and behavior of the system and service to sudden and severe load increases to become familiar with its behavior during times of urgent sales and campaigns.
+![Types of tests](../images/spike.webp)
 
 ### Soak test
 Now we want to examine the behavior of the system and service in the long term and investigate the problems that may occur in the long term such as memory leaks, connection resource exhaustion, etc.
+![Types of tests](../images/soak.webp)
 
 ### Breake point test
 Now we want to find the exact breaking point and we increase the load to find the exact breaking point.
+![Types of tests](../images/breakpoint.webp)
